@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table align="center">
+        <tr>
+            <td><label for="name">NAME</label></td>
+            <td>:</td>
+            <td><input type="text" id="name"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td id="abc"></td>
+        </tr>
+        <tr>
+            <td><label for="phone">PHONE</label></td>
+            <td>:</td>
+            <td><input type="text" id="phone"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td id="abc1"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td><center><input type="submit"  onclick="details()"></center></td>
+        </tr>
+
+    </table>
+
+    <script>
+        function details()
+        {
+           let name1= document.getElementById("name").value
+           if(name1=="")
+            {
+                document.getElementById("abc").innerHTML=`please enter Name`
+                document.getElementById("abc").style.color=`red`
+                document.getElementById("name").style.borderColor=`red`
+
+            }
+            else if(name1.length<3 || name1.length>15)
+                {
+                    document.getElementById("abc").innerHTML=`invalid`
+                    document.getElementById("abc").style.color=`red`
+                    document.getElementById("name").style.borderColor=`red`
+                }
+            else
+            {
+                document.getElementById("name").style.borderColor=`green`
+            }
+            let phone1= document.getElementById("phone").value
+           if(phone1=="")
+            {
+                document.getElementById("abc1").innerHTML=`please enter phone number`
+                document.getElementById("abc1").style.color=`red`
+                document.getElementById("phone").style.borderColor=`red`
+
+            }
+            else if(phone1.length==10)
+                {
+                    
+                    document.getElementById("phone").style.borderColor=`green`
+                    <!-- document.getElementById("phone").style.color=`green` -->
+                }
+            else
+            {  document.getElementById("abc1").innerHTML=`invalid phone number`
+                document.getElementById("abc1").style.color=`red`
+                document.getElementById("phone").style.borderColor=`green`
+            }
+            
+        }
+    </script>
+</body>
+</html>

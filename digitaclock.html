@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+            flex-direction: column;
+            background-color: rgba(0, 255, 128, 0.658);
+
+        }
+        @keyframes clock{
+            from{
+                filter: hue-rotate(0deg);
+
+            }
+            to{
+                filter: hue-rotate(2000deg);
+            }
+        }
+        h1{
+            text-align: center;
+            font-style: italic;
+            color: red;
+            background-color: rgba(0, 0, 0, 0.536);
+            font-size: 50px;
+            text-shadow: 1px 1px 1px blue,-1px 1px 1px blue,1px -1px 1px blue,-1px -1px 1px blue;
+
+        }
+        body{
+            animation: clock 20s infinite;
+        }
+        #hour{
+            font-size: 80px;
+        }
+        #date{
+            font-size: 40px;
+        }
+        .a{
+            font-style: italic;
+            color: red;
+            text-shadow: 1px 1px 1px blue,-1px 1px 1px blue,1px -1px 1px blue,-1px -1px 1px blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>DIGITAL CLOCK</h1>
+    <div id="container">
+        <span id="hour"  class="a"></span>
+        <br>
+        <span id="date"  class="a"></span>
+
+    </div>
+
+    <script>
+        function displaytime()
+        {
+            let date=new Date()
+            let h=date.getHours()
+            let m=date.getMinutes()
+            let s=date.getSeconds()
+            let ms=date.getMilliseconds()
+            let day=date.getDay()
+            let date1=date.getDate()
+            let month=date.getMonth()
+            let year=date.getFullYear()
+            let day1=["sunday","monday","tuesday","wednesday","thursday","friday","saturday"]
+            let month1=["january","february","march","april","may" ,"june","july","august","september","october","november","december"]
+
+            let h1=(h>12)?(h-12):h
+            let h2=(h1<10)?("0"+h1):h1
+            let m1=(m<10)?("0"+m):m
+            let s1=(s<10)?("0"+s):s
+            document.getElementById("hour").innerHTML=`${h2} : ${m1} : ${s1} : ${ms}`
+            document.getElementById("date").innerHTML=`${day1[day]} ${date1} ${month1[month]}  ${year}`
+
+            setTimeout(() =>
+            {
+                displaytime()
+            },100)
+        }
+        displaytime()
+    </script>
+</body>
+</html>

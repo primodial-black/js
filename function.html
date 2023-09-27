@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Named function
+        document.writeln("Named function"+"<br>")
+        f1(1,2)
+        document.writeln("hoisting"+"<br>")
+        function f1(x,y)
+        {
+            document.writeln("hello"+"<br>")
+            document.writeln(x+y+"<br>")
+        }
+        let a=f1(10,20)
+        document.writeln(a+"<br>")
+        document.writeln("<br>")
+        // anonymous function
+        document.writeln("Anonymous function"+"<br>")
+        var p=20
+        var q=40
+        document.writeln(f)  //f is not a function 
+        //console.log(f())  //f is not a function 
+        document.writeln("<br>")
+        document.writeln("<br>")
+        var f =function (x , y)
+        {
+            document.write( x+y +"<br>")
+            document.write( x ,",", y +"<br>")
+            return
+        }
+        f(3,4)
+        document.writeln(f(p,q))
+
+
+    </script>
+</body>
+</html>

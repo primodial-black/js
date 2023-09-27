@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1 id="a">hello</h1>
+    <h2 id="b">haii</h2>
+    <h3 id="a">gdnyt</h3>
+    <p id="x">bye</p>
+    <div id="t">
+        <h1>inside <hr>div</h1>
+        <hr>
+        <h2 id="r">how</h2>
+    </div>
+    <script>
+        let x=document.getElementById("a")
+        console.log(x)//<h1 id="a">hello</h1>
+        console.log(x.innerHTML)//hello
+        console.log(x.innerText)//hello
+        console.log(x.textContent)//hello
+        console.log(document.getElementById("b"))//<h2 id="b">haii</h2>
+        console.log(document.getElementById("x"))//<h2 id="x">bye</h2>
+        console.log(document.getElementById("t"))//<div id="t"><h1>inside div</h1> <h2 id="r">how</h2></div>
+            
+        console.log(document.getElementById("t").innerText)//inside dive how
+    </script>
+</body>
+</html>

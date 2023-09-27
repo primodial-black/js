@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let a=[100,200,300,400]
+        x=a.slice(0,a.length/2)
+        z=[]
+       for (i=0;i<x.length;)
+        {
+            b=x.shift()
+            z.unshift(b)
+        }
+        console.log(z)
+
+        let a1=["h","a",100,200,500,true]
+        x1=a1.slice(a1.length/2)
+        z1=[]
+       for (i1=0;i1<x1.length;)
+        {
+            b1=x1.shift()
+            z1.unshift(b1)
+        }
+        console.log(z1)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

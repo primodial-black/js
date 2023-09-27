@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //join
+        //let x=[1,2,3,4]
+        //let y=x.join()              //not affect original array
+        //let z=x.join("")
+        
+        //console.log(y)
+        //console.log(z)
+        //console.log(typeof(y))
+        //console.log(typeof(z))
+
+        //reverse
+        //let a=[1,2,3,4]
+        //console.log(a.reverse())        //affect original array
+        //let b=a.reverse()
+       // console.log(b)
+            // higher order method
+            let y=["h",true,100,5]
+            let z=y.map(function f1(a)
+            {
+                console.log(a)
+                return a+10
+            }
+            )
+            console.log(z)
+
+            let i=["h",true,100,5]
+            let j=i.map(function (a,g,x,g)
+            {
+                console.log(a,g,x)
+                return a+10
+            }
+            )
+            console.log(j)
+
+            console.log( i.map((p,q,r)=>
+            {
+                console.log("element",p)
+                console.log("index",q)
+                console.log("array",r)
+                console.log(p+5)
+            })
+            )
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

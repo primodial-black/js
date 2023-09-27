@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><h1>To Find square root</h1>
+    <input type="text" id="sqr">
+    <button onclick="calculation()">click</button>
+    <h2 id="h1"></h2>
+    <h1>To Find cube root</h1>
+    <input type="text" id="cbr">
+    <button onclick="calculation1()">click</button>
+    <h2 id="h2"></h2>
+    <h1>To Find log</h1>
+    <input type="text" id="log">
+    <button onclick="calculation2()">click</button>
+    
+    
+    <h2 id="h3"></h2>
+
+    <script>
+        function calculation()
+        {
+            let a=document.getElementById("sqr").value
+            let b=Math.sqrt(a)
+           document.getElementById("h1").innerHTML=`the square root of the ${a} is : ${b}`
+           document.getElementById("h1").style.color=`blue`
+        }
+        function calculation1()
+        {
+           
+           let cb=document.getElementById("cbr").value
+            let c=Math.cbrt(cb)
+            document.getElementById("h2").innerHTML=`the cube root of the ${cb} is : ${c}`
+            document.getElementById("h2").style.color=`blue`
+           
+        }
+        function calculation2()
+        {
+           
+            let log=document.getElementById("log").value
+            let l=Math.log(log)
+            document.getElementById("h3").innerHTML=`the log of the ${log} is : ${l}`
+            document.getElementById("h3").style.color=`blue`
+        }
+    </script>
+    
+</body>
+</html>

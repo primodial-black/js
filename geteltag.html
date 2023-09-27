@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="a">simple</h1>
+    <h1 class="a">simple</h1>
+    <p class="t">dynamic</p>
+    <h1 class="a">synchronous</h1>
+    <script>
+        let x=document.getElementsByTagName("h1")
+        console.log(x)
+        for (i in x)
+        {
+                console.log(i)//
+                console.log(i.innerHTML)
+        }
+        for( i=0;i<x.length;i++){
+            console.log(x[i])
+            console.log(x[i].innerHTML)
+        }
+        for(let i of x){
+            console.log(i)
+            console.log(i.innerHTML)
+        }
+        var p=Array.from(x)
+        console.log(Array.isArray(p))
+        p.map(function f1(z){
+            console.log(z)
+            console.log(z.innerHTML)
+        })
+        p.forEach(function f2(e){
+            console.log(e)
+            console.log(e.innerText)
+        })
+        
+    </script>
+</body>
+</html>

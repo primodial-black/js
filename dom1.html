@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="a">qsp</h1>
+    <h2 class="b">jsp</h2>
+    <h3 class="a">pysp</h3>
+    <p class="a">prosp</p>
+
+    <script>
+        let z=document.getElementsByClassName("a")
+        console.log(z)// [h1.a, h3.a, p.a]
+        console.log(z[0])//<h1 class="a">qsp</h1>
+        console.log(z[0].textContent)//qsp
+        console.log(z[1])//<h3 class="a">pysp</h3>
+        console.log(z[1].textContent)//jsp
+        console.log(z[2])//<p class="a">prosp</p>
+        console.log(z[2].textContent)//prospsp
+        let h=document.getElementsByClassName("b")
+        console.log(h)//<p class="a">prosp</p>
+        console.log(h[0])//prospsp
+        console.log(h[0].textContent)//prospsp
+    </script>
+</body>
+</html>

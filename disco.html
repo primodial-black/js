@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <br>
+    <br>
+    <button onclick="abc()">click</button>
+    <script>
+       
+        function abc()
+      {
+        var l=["red","blue","green","aqua","pink","black"]
+        
+        for( let i=0;i<=l.length;i++)
+        {
+            setInterval(() =>
+            {
+                document.querySelector("body").style.backgroundColor+=l[i]
+            },2000)
+        }
+        
+      }
+
+      
+        
+      
+    </script>
+</body>
+</html>

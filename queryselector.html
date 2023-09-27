@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>hello</p>
+    <p class="a">bye</p>
+    <h1 id="x">done </h1>
+    <h1 class="a"></h1>
+    <script>
+        // query selector targets only first occurance
+        let x=document.querySelector(".a")
+        console.log(x)
+        console.log(x.innerHTML)
+        console.log(document.querySelector("h1"))
+        console.log(document.querySelector("h1").innerHTML)
+        console.log(document.querySelector("#x"))
+        console.log(document.querySelector("p"))
+        console.log(document.querySelector("p").innerHTML)
+    </script>
+</body>
+</html>

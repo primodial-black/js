@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="a">qsp</h1>
+    <h2 class="b">jsp</h2>
+    <h3 class="a">pysp</h3>
+    <p class="a">prosp</p>
+    <script>
+        let x=document.getElementsByClassName("a")
+        console.log(x)
+        for(let i of x)
+        {
+            console.log(i)
+            console.log(i.innerHTML,"for in")
+        }
+        console.log(Array.isArray(x))
+        let f=Array.from(x)
+        console.log(Array.isArray(f))
+        console.log(f)
+        f.map(function f1(s)
+        {
+            console.log(s)
+            console.log(s.innerHTML,"map")
+        })
+        f.forEach(e=>
+        {
+            console.log(e,"foreach")
+            console.log(e.innerHTML)
+        })
+    </script>
+</body>
+</html>
