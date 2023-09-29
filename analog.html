@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: rgb(58, 255, 189);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+        }
+        .container{
+            
+            position: relative;
+
+        }
+        .clock{
+            background-color: blueviolet;
+            position:absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 5px solid rgb(255, 0, 0);
+            box-shadow: 0px 0px 40px black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .clock span{
+            transform: rotate(calc(30deg*var(--a)));
+            position: absolute;
+            inset: 12px;
+            text-align: center;
+        }
+         .clock span i{
+            transform: rotate(calc(-30deg*var(--a)));
+            position:absolute;
+         }
+         .clock::before{
+            content: "";
+            width: 10px;
+            height: 10px;
+            background-color: black;
+            border-radius: 50%;
+         }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="clock">
+        <span style="--a:1"><i>1</i></span>
+        <span style="--a:2"><i>2</i></span>
+        <span style="--a:3"><i>3</i></span>
+        <span style="--a:4"><i>4</i></span>
+        <span style="--a:5"><i>5</i></span>
+        <span style="--a:6"><i>6</i></span>
+        <span style="--a:7"><i>7</i></span>
+        <span style="--a:8"><i>8</i></span>
+        <span style="--a:9"><i>9</i></span>
+        <span style="--a:10"><i>10</i></span>
+        <span style="--a:11"><i>11</i></span>
+        <span style="--a:12"><i>12</i></span>
+        </div>
+    </div>
+
+</body>
+</html>
