@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 300px;
+            width: 400px;
+        
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+        }
+        #gen{
+            border-radius: 20px;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>GENERATE HEXA-DECIMAL COLOUR</h1>
+    <div>
+        <h1 id="h1"></h1>
+        <button id="gen" onclick="gen()">GENERATE color</button>
+    </div>
+
+    <script>
+        function gen()
+        {
+        let co="#"
+        let color=["A","B","C","D","E","F",0,1,2,3,4,5,6,7,8,9,"a","b","c","d","e","f"]
+        let a=Math.random()
+        for(i=0;i<=5;i++)
+        {
+            let x = Math.floor(Math.random()* color.length);
+            co=co+color[x]
+        } 
+        document.getElementById("h1").innerHTML=co
+        document.querySelector("body").style.backgroundColor=co
+    }
+    </script>
+</body>
+</html>

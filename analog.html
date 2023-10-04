@@ -36,25 +36,49 @@
         .clock span{
             transform: rotate(calc(30deg*var(--a)));
             position: absolute;
-            inset: 12px;
+            inset: 12px;    
             text-align: center;
+            
         }
          .clock span i{
             transform: rotate(calc(-30deg*var(--a)));
             position:absolute;
+            font-size: 30px;
+            display: inline-block;
          }
          .clock::before{
+            position: absolute;
             content: "";
             width: 10px;
             height: 10px;
             background-color: black;
             border-radius: 50%;
+            z-index: 2;
+            
+         }
+         .time i{
+            position:absolute;
+            width:4px;
+            height:var(--h);
+            background-color: var(--b);
+            border-radius: 15px;
+         }
+         time{
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items:flex-end;
+            z-index: 1;
+
          }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="clock">
+        <div class="time" style="--b:black;--h:60px;"><i></i></div>
+        <div class="time" style="--b:green;--h:50px;"><i></i></div>
+        <div class="time" style="--b:aqua;--h:40px;"><i></i></div>
         <span style="--a:1"><i>1</i></span>
         <span style="--a:2"><i>2</i></span>
         <span style="--a:3"><i>3</i></span>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #right{
+            background-color: rgb(255, 255, 255);
+            height: 500px;
+            width: 500px;
+            float: left;
+            border: 3px solid rgb(255, 255, 255);
+        }
+        #main{
+            height: 500px;
+            width: 500px;
+            border:3px solid red;
+            background-image:linear-gradient(red,yellow,purple);
+            float: right;
+            color: blue;
+            font-size: 30px;
+            box-shadow: 0px 0px 40px black;
+            
+            
+        }
+        #sub1{
+            height:350px ;
+            width: 350px;
+            background-color: rgb(159, 255, 63);
+            position: relative;
+            left: 130px;
+            top: 70px;
+            border:3px solid rgb(72, 0, 131);
+            box-shadow: 0px 0px 40px rgb(0, 0, 0);
+            
+        }
+        #sub2{
+            color: rgb(255, 255, 255);
+            height:350px ;
+            width: 350px;
+            background-color: rgb(0, 0, 238);
+            position: relative;
+            left: 40px;
+            bottom: 285px;
+            border:3px solid rgb(72, 0, 131);
+            border-radius: 50%;
+            background-image: url(./winter.jpg);
+            background-size: cover;
+            font-size: large;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0px 0px 40px rgb(0, 0, 0);
+            
+        }
+        #table{
+            font-size: 15px;
+            position: relative;
+            left: 25px;
+            
+        }
+        input{
+           
+            color: bisque;
+            background-color: rgba(245, 245, 220, 0);
+        }
+        .cen{
+            font-size: large;
+            position: relative;
+            top: 20px;
+        }
+        #p1,#p2,#p3,#p4,#p5{
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="right">
+        <h3 id="p11"></h3>
+        <h3 id="p22"></h3>
+        <h3 id="p33"></h3>
+        <h3 id="p44"></h3>
+        <h3 id="p55"></h3>
+    </div>
+    <div id="main">
+       <center style="background-color: brown;" class="cen"> 😀😍WELCOME TO EXAM😍😀</center>
+        <div id="sub1"></div>
+        <div id="sub2">
+            <table id="table">
+                <tr>
+                    <td>NAME</td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="name1" placeholder="enter your name"> <br><h3 id="p1"></h3></td>
+                </tr>
+                
+                <tr>
+                    <td>PHONE NO :</td>
+                </tr>
+                <tr>
+                    <td><input type="number" id="phone1" placeholder="enter your number"><br><h3 id="p2"></h3></td>
+                </tr>
+                <tr>
+                    <td>EMAIL ID :</td>
+                </tr>
+                <tr>
+                    <td><input type="email" id="mail1" placeholder="enter your email"><br><h3 id="p3"></h3></td>
+                </tr>
+                <tr>
+                    <td>PASSWORD :</td>
+                </tr>
+                <tr>
+                    <td><input type="password" id="pass1" placeholder="enter your pswd"><br><h3 id="p4"></h3></td>
+                </tr>
+                <tr>
+                    <td> CONFIRM PASSWORD :</td>
+                </tr>
+                <tr>
+                    <td><input type="password" id="conf" placeholder="enter your pswd"><br><h3 id="p5"></h3></td>
+                </tr>
+                    <tr>
+                        <td><center><input type="SUBMIT" onclick="details()"></center></td>
+                    </tr>
+            </table>
+        </div>
+    </div>
+    
+
+    <script>
+        function details()
+        {
+            let name1=document.getElementById("name1").value;
+            if(name1.length>3 && name1.length<20)
+            {
+                localStorage.setItem("NAME",name1)
+                let name2=localStorage.getItem("NAME")
+                document.getElementById("p11").innerHTML=`the name is ${name2}`
+                document.getElementById("p11").style.color=`green`
+            }
+            if(name1.length<3 || name1.length>20)
+            {
+                
+                document.getElementById("p1").innerHTML=`please enter valid name`
+                document.getElementById("p1").style.color=`red`
+            }
+            if(name1=="")
+            {
+                document.getElementById("p1").innerHTML=`don't leave empty`
+                document.getElementById("p1").style.color=`red`
+                document.getElementById("name1").style.borderColor=`red`
+            }
+
+            let phone1= document.getElementById("phone1").value
+            
+            if(phone1=="")
+             {
+                 document.getElementById("p2").innerHTML=`please enter phone number`
+                 document.getElementById("p2").style.color=`red`
+                 document.getElementById("phone1").style.borderColor=`red`
+ 
+             }
+             else if(phone1.length==10)
+                 {
+                    localStorage.setItem("PHONE",name1)
+                    let name2=localStorage.getItem("PHONE")
+                    document.getElementById("p22").innerHTML=`the number is ${phone1}`
+                    document.getElementById("p22").style.color=`green`
+                     
+
+                 }
+             else
+             {  document.getElementById("p22").innerHTML=`invalid phone number`
+                 document.getElementById("p22").style.color=`red`
+                 document.getElementById("phone1").style.borderColor=`red`
+             }
+             let email=document.getElementById("mail1").value
+             if (email=="")
+             {
+                document.getElementById("p3").innerHTML=`please enter your  email`
+                document.getElementById("p3").style.color=`red`
+                document.getElementById("mail1").style.borderColor=`red`
+             }
+             else
+             {
+                document.getElementById("p33").innerHTML=`the email is ${email}`
+                document.getElementById("mail1").style.borderColor=`green`
+                document.getElementById("p33").style.color=`green`
+             }
+            
+            let pass1=document.getElementById("pass1").value;
+            let pass2=document.getElementById("conf").value;
+            if(pass1==pass2) 
+        {
+            if(pass2.length>=8 && pass2.length<=16)
+            {
+            localStorage.setItem("PASSWORD",pass2)
+            let pass3=localStorage.getItem("PASSWORD")
+            document.getElementById("p44").innerHTML=`confirmed password is ${pass3}`
+            document.getElementById("p44").style.color=`green`
+            }
+            else
+            {
+                document.getElementById("p4").innerHTML=`the password must be in 8-16 characters`
+                document.getElementById("p4").style.color=`red`
+            }
+        }
+        else
+        {
+            document.getElementById("p5").innerHTML=`password doesnot match`
+            document.getElementById("p5").style.color=`red`
+            
+        }
+            
+    
+            if(pass1=="")
+            {
+                document.getElementById("p4").innerHTML=`please enter your password`
+                    document.getElementById("p4").style.color=`red`
+                    document.getElementById("pass1").style.borderColor=`red`
+            }
+            
+            if(pass2=="")
+            {
+                document.getElementById("p5").innerHTML=`please enter your password`
+                    document.getElementById("p5").style.color=`red`
+                    document.getElementById("conf").style.borderColor=`red`
+            }
+            if(pass2.length>=8 && pass2.length<=16)
+            {
+            localStorage.setItem("PASSWORD",pass2)
+            let pass3=localStorage.getItem("PASSWORD")
+            document.getElementById("p44").innerHTML=`confirmed password is ${pass3}`
+            document.getElementById("p44").style.color=`green`
+            }
+           
+        }
+           
+           
+
+        
+    </script>
+</body>
+</html>
