@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1{
+            height: 500px;
+            width: 500px;
+            background-color: blueviolet;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            
+        }
+        .div2{
+            height: 200px;
+            width: 200px;
+            z-index: 2;
+            position:absolute;
+            background-color: rgb(226, 43, 43);
+        }
+        img{
+            height: 500px;
+            width: 500px;
+            
+        }
+        video{
+            height: 200px;
+            width: 200px; 
+
+            
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let a=document.createElement("div")
+        console.log(a);
+        let body1=document.querySelector("body")
+        a.classList.add("div1")
+        body1.append(a)
+        let b=document.createElement("div")
+        b.classList.add("div2")
+        a.append(b)
+
+        let img1=document.createElement("img")
+        console.log(img1);
+        img1.src="winter.jpg"
+        a.append(img1)
+
+        let vid1=document.createElement("video")
+        console.log(vid1);
+        vid1.src="vid.mp4"
+        vid1.controls="controls"
+        vid1.autoplay = true
+        vid1.muted=true
+        vid1.loop=true
+        b.append(vid1)
+
+    </script>
+</body>
+</html>

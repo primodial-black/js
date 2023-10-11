@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .h1{
+            color: rgb(14, 255, 142);
+            background-color: orange;
+            padding: 10px;
+        }
+        .h2{
+            color: rgb(255, 98, 14);
+            background-color: rgb(35, 155, 188);
+            padding: 10px;
+            text-shadow: 2px 2px 3px black;
+
+
+        }
+    </style>
+</head>
+<body>
+    <h1>WELCOME</h1>
+    <script>
+    //    document.querySelector("h1").classList.add("h1")
+    //    document.querySelector("h1").classList.toggle("h1")
+    //    document.querySelector("h1").classList.remove("h1")
+       let b=document.querySelector("h1")
+      b.classList.add("h1")
+      console.log(b);
+      b.classList.replace("h1","h2")
+     let c= b.classList.contains("h1")
+     console.log(c)
+
+    </script>
+</body>
+</html>

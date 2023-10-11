@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            background-color: blueviolet;
+            color: white;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let body=document.body
+        let tab=document.createElement("table")
+        tab.setAttribute("border","all")
+        tab.setAttribute("rules","all")
+        let tr1=document.createElement("tr")
+        let cat=["studname","qualification","percentage"]
+        let st1=["syed","m.tech","99.5"]
+        let st2=["vasu","p.hd","97"] 
+        let st3=["venky","m.tech","100"] 
+        cat1=document.class
+        for(i=0;i<=cat.length-1;i++)
+        {
+            let td=document.createElement("td")
+            td.innerHTML=cat[i]
+            tr1.append(td)
+        }
+        let tr2=document.createElement("tr")
+        for(i=0;i<=st1.length-1;i++)
+        {
+            let td=document.createElement("td")
+            td.innerHTML=st1[i]
+            tr2.append(td)
+        }
+        let tr3=document.createElement("tr")
+        for(i=0;i<=st2.length-1;i++)
+        {
+            let td=document.createElement("td")
+            td.innerHTML=st2[i]
+            tr3.append(td)
+        }
+        let tr4=document.createElement("tr")
+        for(i=0;i<=st3.length-1;i++)
+        {
+            let td=document.createElement("td")
+            td.innerHTML=st3[i]
+            tr4.append(td)
+        }
+        tab.append(tr1)
+        tab.append(tr2)
+        tab.append(tr3)
+        tab.append(tr4)
+       
+        body.append(tab)
+    </script>
+</body>
+</html>

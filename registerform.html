@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 300px;
+        }
+        .container{
+           
+            height: 700px;
+            width: 400px;
+            border-radius: 20px;
+            border: 3px solid red;
+            background-color: rgba(157, 112, 199, 0.803);
+        }
+        .head h1{
+            background-color: orangered;
+            text-align: center;
+            font-style: italic;
+        }
+        .field{
+            padding: 20px 10px;
+            position: relative;
+        }
+        .field label{
+            display: block;
+        }
+       .field span{
+            position: relative;
+            left:-50px;
+            visibility: hidden;
+            
+            
+        }
+        .field input{
+            padding: 5px;
+            width: 330px;
+            border-radius: 10px;
+            
+        }
+        button{
+            padding: 15px 25px;
+            border-radius: 20px;
+            position: relative;
+            top: 110px;
+            left: 80px;
+        }
+        small{
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="head">
+            <h1>REGISTRATION FORM</h1>
+        </div>
+        <form action="">
+            <div class="field">
+                <label for="name">ENTER NAME:</label><br>
+                <input type="text" name="" id="name">
+                <span><i class="fa-regular fa-circle-check"></i></span>
+                <span><i class="fa-solid fa-circle-exclamation"></i></span>
+                <small>erreo msg</small>
+                <label for="name">ENTER PHONE NO:</label><br>
+                <input type="text" name="" id="name">
+                <span><i class="fa-regular fa-circle-check"></i></span>
+                <span><i class="fa-solid fa-circle-exclamation"></i></span>
+                <small>erreo msg</small>
+                <label for="name">ENTER EMAIL ID:</label><br>
+                <input type="text" name="" id="name">
+                <span><i class="fa-regular fa-circle-check"></i></span>
+                <span><i class="fa-solid fa-circle-exclamation"></i></span>
+                <small>erreo msg</small>
+                <label for="name">ENTER PASSWORD:</label><br>
+                <input type="text" name="" id="name">
+                <span><i class="fa-regular fa-circle-check"></i></span>
+                <span><i class="fa-solid fa-circle-exclamation"></i></span>
+                <small>erreo msg</small>
+                <label for="name">ENTER CONFIRM PASSWORD:</label><br>
+                <input type="text" name="" id="name">
+                <span class="fa-regular fa-circle-check"></span>
+                <span><i class="fa-solid fa-circle-exclamation"></i></span>
+                <small>erreo msg</small>
+            </div>
+            <button>submit</button>
+        </form>
+    </div>
+</body>
+</html>

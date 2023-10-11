@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        input{
+            padding: 15px;
+            border-radius: 10px;
+            border: 0px;
+            outline: 0px;
+            font-size: 15px;
+            
+        }
+        /* i::before{
+            visibility: hidden;
+        }
+        i::after{
+            visibility: visible;
+        } */
+        .div1{
+            height: 50px;
+            width: 250px;
+            border: 3px solid black;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="password" name="" id="">
+        <i class="fa fa-eye" onclick="pswdeye()"></i>
+    </div>
+    <script>
+        document.querySelector("div").classList.add("div1")
+        function pswdeye()
+        {
+            let pass1=document.querySelector("input").getAttribute("type")
+            // let inp=document.querySelector("input")
+            // if(inp!="")
+            // {
+            //     document.querySelector("i")
+                
+            // }
+            // else{
+
+            // }
+
+
+            if(pass1=="password")
+            {
+                document.querySelector("input").setAttribute("type","text")
+                document.querySelector("i").setAttribute("class","fa fa-eye-slash")
+            }
+            else
+            {
+                document.querySelector("input").setAttribute("type","password")
+                document.querySelector("i").setAttribute("class","fa fa-eye")
+
+
+            }
+            
+
+        }
+    </script>
+</body>
+</html>
