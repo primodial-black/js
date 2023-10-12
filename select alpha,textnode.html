@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="" id="sel">
+        <option value="">---select option---</option>
+    </select>
+    <select name="" id="sele">
+        <option value="">---select State---</option>
+    </select>
+
+    <script>
+        let body=document.body
+        let sele=document.getElementById("sel")
+        let arr=["A","S","D","F","G","H","J","K","L"]
+        let arr1=arr.sort()
+        for (i=0;i<arr1.length;i++)
+        {
+            let option=document.createElement("option")
+            //option.innerHTML=arr1[i]
+            let node=document.createTextNode(arr1[i])
+            option.append(node)
+            sele.append(option)
+        }
+
+
+
+        let select=document.getElementById("sele")
+        let array=["Andhra Pradesh","Sikkim","Madhya Pradesh","Assam","Gujarat","Himachal Pradesh","Jharkhand","Karnataka","Delhi"]
+        let arr2=array.sort()
+        for (i=0;i<arr2.length;i++)
+        {
+            let option1=document.createElement("option")
+            //option.innerHTML=arr1[i]
+            let node1=document.createTextNode(arr2[i])
+            option1.append(node1)
+            select.append(option1)
+        }
+       
+     //   body.append(sele)
+    </script>
+    
+</body>
+</html>
