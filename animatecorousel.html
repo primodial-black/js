@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            
+        }
+        .div1{
+            height: 500px;
+            width: 100%;
+            background-color: black;
+            animation: corousel 10s infinite;
+            position: relative;
+            animation-: ;
+            
+        }
+        @keyframes corousel {
+            0%{
+                background-image: url(./404.jpg);
+                background-size: cover;
+                transform: translate3d(-1445px,0px ,0px);
+                
+
+            }
+            0%{
+                transform: translate3d(-845px,0px ,0px);
+                background-image: url(./brain.jpg);
+                background-size: cover;
+                
+
+            }
+            50%{
+                background-image: url(./cyber.jpg);
+                background-size: cover;
+                transform: translateX(100%)
+
+            }
+            75%{
+                background-image: url(./groot.jpg);
+                background-size: cover;
+                transform: translateX(-100%)
+
+            }
+            100%{
+                background-image: url(./ghoul.jpg);
+                background-size: cover;
+                transform: translateX(100%)
+
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    
+</body>
+</html>

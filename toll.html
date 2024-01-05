@@ -1,0 +1,175 @@
+<html>
+<head>
+  <title>Toll Calculator Application</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/react/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/react-leaflet/dist/react-leaflet.min.js"></script>
+  <script src="https://unpkg.com/@googlemaps/polyline-codec"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    // Import React, Next.js, Hooks, Redux, and memoization
+    import React, { useState, useEffect, useMemo } from 'react';
+    import { useRouter } from 'next/router';
+    import { useSelector, useDispatch } from 'react-redux';
+    import { setOrigin, setDestination, setTollCost, setRoute, setTollDetails } from './actions';
+
+    // Define the API key and URL for TollGuru
+    const API_KEY = 'YOUR_API_KEY';
+    const API_URL = 'https://dev.tollguru.com/v1/calc/route';
+
+    // Define the Header component
+    function Header() {
+      return (
+        <header id="tollCalculatorHeader">
+          <h1>Toll Calculator Application</h1>
+        </header>
+      );
+    }
+
+    // Define the CalculateTollButton component
+    function CalculateTollButton({ origin, destination }) {
+      // Use the useDispatch hook to dispatch actions to the Redux store
+      const dispatch = useDispatch();
+
+      // Define a function to calculate the toll cost and route using the TollGuru API
+      const calculateToll = async () => {
+        // Validate the origin and destination inputs
+        if (!origin || !destination) {
+          alert('Please enter the origin and destination');
+          return;
+        }
+
+        // Create a request object with the required parameters
+        const request = {
+          method: 'POST',
+          url: API_URL,
+          headers: {
+            'Content-Type': 'application/json',
+            'x-api-key': API_KEY
+          },
+          data: {
+            source: 'osrm',
+            polyline: origin + destination // Use only Route Encoded Polyline
+          }
+        };
+
+        // Send the request and handle the response
+        try {
+          const response = await axios(request);
+          const data = response.data;
+          // Dispatch actions to update the toll cost, route, and toll details in the Redux store
+          dispatch(setTollCost(data.costs));
+          dispatch(setRoute(data.route));
+          dispatch(setTollDetails(data.tolls));
+        } catch (error) {
+          // Handle any errors
+          console.error(error);
+          alert('Something went wrong. Please try again.');
+        }
+      };
+
+      // Return a button element that calls the calculateToll function on click
+      return (
+        <button id="calculateToll" onClick={calculateToll}>Calculate Toll</button>
+      );
+    }
+
+    // Define the RouteVisualization component
+    function RouteVisualization({ route }) {
+      // Use the useMemo hook to memoize the decoded polyline for performance optimization
+      const decodedPolyline = useMemo(() => {
+        // Use the @googlemaps/polyline-codec library to decode the polyline
+        return polyline.decode(route);
+      }, [route]);
+
+      // Return a React-Leaflet component to display the route on a map
+      return (
+        <div id="leafletMapContainer">
+          <MapContainer center={[decodedPolyline[0][0], decodedPolyline[0][1]]} zoom={13} scrollWheelZoom={false}>
+            <TileLayer
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            <Polyline positions={decodedPolyline} />
+          </MapContainer>
+        </div>
+      );
+    }
+
+    // Define the TollDetailsDisplay component
+    function TollDetailsDisplay({ tollDetails }) {
+      // Return a div element that displays the toll information on the markers along the route
+      return (
+        <div id="tollDetailsDisplay">
+          {tollDetails.map((toll, index) => (
+            <div key={index} className="tollMarker">
+              <h3>Toll #{index + 1}</h3>
+              <p>Cost: {toll.cost}</p>
+              <p>Additional Details: {toll.tag}</p>
+            </div>
+          ))}
+        </div>
+      );
+    }
+
+    // Define the UserEducation component
+    function UserEducation() {
+      // Use the useState hook to manage the state of the tooltip visibility
+      const [showTooltip, setShowTooltip] = useState(false);
+
+      // Define a function to toggle the tooltip visibility on click
+      const toggleTooltip = () => {
+        setShowTooltip(!showTooltip);
+      };
+
+      // Return a div element that contains a button to show/hide the tooltip and a div to display the tooltip content
+      return (
+        <div id="userEducation">
+          <button id="showTooltip" onClick={toggleTooltip}>{showTooltip ? 'Hide' : 'Show'} Tooltip</button>
+          {showTooltip && (
+            <div id="tooltipContent">
+              <p>The toll cost between two waypoints depends on various factors, such as:</p>
+              <ul>
+                <li>The vehicle type and size</li>
+                <li>The time and day of travel</li>
+                <li>The payment method and tag</li>
+                <li>The toll road operator and location</li>
+              </ul>
+              <p>To learn more about how toll calculations work, please visit the TollGuru website.</p>
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    // Define the App component
+    function App() {
+      // Use the useRouter hook to access the query parameters from the URL
+      const router = useRouter();
+      // Use the useSelector hook to access the state from the Redux store
+      const origin = useSelector(state => state.origin);
+      const destination = useSelector(state => state.destination);
+      const tollCost = useSelector(state => state.tollCost);
+      const route = useSelector(state => state.route);
+      const tollDetails = useSelector(state => state.tollDetails);
+
+      // Return a div element that contains the Header, CalculateTollButton, RouteVisualization, TollDetailsDisplay, and UserEducation components
+      return (
+        <div id="app">
+          <Header />
+          <CalculateTollButton origin={router.query.origin} destination={router.query.destination} />
+          {route && <RouteVisualization route={route} />}
+          {tollDetails && <TollDetailsDisplay tollDetails={tollDetails} />}
+          <UserEducation />
+        </div>
+      );
+    }
+
+    // Render the App component to the root element
+    ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
+</body>
+</html>

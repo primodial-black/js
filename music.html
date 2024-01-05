@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>music DRUMS</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 600px;
+            background-image: url(https://th.bing.com/th?id=OIP.VJguKOlfZAkRVh5gFDNW5QHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2);
+            background-repeat: no-repeat;
+            background-size: cover;
+            flex-direction: column;
+            animation: color 15s infinite;
+
+        }
+        @keyframes color {
+            from{
+                filter: hue-rotate(20000deg);
+            }
+            to{
+                filter: hue-rotate(0deg);
+            }
+            
+        }
+        input{
+            width: 100px;
+            height: 100px;
+            border-radius:50% ;
+            margin: 15px;
+            font-size: 80px;
+        }
+        input:nth-child(1)
+        {
+            background-image: url(https://th.bing.com/th?id=OIP.IeqEXiH3ixS2Rl8a1iaVMQHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2);
+            background-size: cover;
+            color: red;
+        }
+        input:nth-child(2)
+        {
+            background-image: url(https://th.bing.com/th?id=OIP.X5cN3X9oJU5zHJ1G7IhPywHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2);
+            background-size: cover;
+            color: red;
+        }
+        input:nth-child(3)
+        {
+            background-image: url(https://th.bing.com/th?id=OIP.j9lI8n50ITmpJmzOt7QigwHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2);
+            background-size: cover;
+            color: red;
+        }
+        input:nth-child(4)
+        {
+            background-image: url(https://th.bing.com/th?id=OIP.cbjVVDscJEgmityWlEWIaAHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2);
+            background-size: cover;
+            color: red;
+        }
+        input:nth-child(5)
+        {
+            background-image: url(https://th.bing.com/th/id/OIP.tp8i1K5nolklo-Ny2Yib3gHaIp?w=155&h=181&c=7&r=0&o=5&pid=1.7);
+            background-size: cover;
+            color: red;
+        }
+        input:nth-child(6)
+        {
+            background-image: url(https://th.bing.com/th/id/OIP.5Zc3Okto40gCpmxAzT9QuwHaEo?w=257&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7);
+            background-size: cover;
+            color: red;
+        }
+        input:nth-child(7)
+        {
+            background-image: url(https://th.bing.com/th/id/OIP.6aZNH6rHgHid-1Y5lkOLkAHaIC?w=149&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7);
+            background-size: cover;
+            color: red;
+        }
+        input:nth-child(8)
+        {
+            background-image: url(https://th.bing.com/th/id/OIP.oHfYQlvTnBnsIx4GNrDS3gHaFP?w=278&h=196&c=7&r=0&o=5&dpr=1.3&pid=1.7);
+            background-size: cover;
+            color: red;
+        }
+        h1{
+            font-size: 100px;
+            color: antiquewhite;
+            display: block;
+            font-style: italic;
+            -webkit-text-stroke: 3px red;
+        }
+    </style>
+</head>
+<body>
+    <h1>MUSIC DRUMS</h1>
+    <div>
+        <input type="button" name="" id="1" value="1" onclick="demo()">
+        <input type="button" name="" id="2" value="2" onclick="demo()">
+        <input type="button" name="" id="3" value="3" onclick="demo()">
+        <input type="button" name="" id="4" value="4" onclick="demo()">
+        <input type="button" name="" id="5" value="5" onclick="demo()">
+        <input type="button" name="" id="6" value="6" onclick="demo()">
+        <input type="button" name="" id="7" value="7" onclick="demo()">
+        <input type="button" name="" id="8" value="8" onclick="demo()">
+    </div>
+
+
+    <script>
+        function demo()
+        {
+            let a=Number(document.activeElement.id)
+            console.log(a)
+            console.log(typeof a)
+            if (onclick="demo()")
+            {
+                function music1(data)
+            {
+                let a=new Audio(data)
+                console.log(a)
+                a.play()
+            }
+
+            }
+            else{
+                let a=new Audio(data)
+                a.pa
+            }
+
+            
+            let arr=[1,2,3,4,5,6,7,8]
+            let mus=["m1.mp3","m2.mp3","m3.mp3","m4.mp3","m5.mp3","m6.mp3","m7.mp3","m8.mp3",]
+            for (i=0;i<arr.length;i++)
+            {
+                if (a==arr[i])
+                {
+                    music1(mus[i])
+                }
+            }
+        }
+        // Get references to the buttons and audio elements
+// var button1 = document.getElementById('button1');
+// var button2 = document.getElementById('button2');
+// var audio1 = document.getElementById('audio1');
+// var audio2 = document.getElementById('audio2');
+
+// // Add event listeners to the buttons
+// button1.addEventListener('click', function() {
+//   // Stop audio2 and play audio1 when button1 is clicked
+//   audio2.pause();
+//   audio2.currentTime = 0;
+//   audio1.play();
+// });
+
+// button2.addEventListener('click', function() {
+//   // Stop audio1 and play audio2 when button2 is clicked
+//   audio1.pause();
+//   audio1.currentTime = 0;
+//   audio2.play();
+// });
+
+
+
+    </script>
+</body>
+</html>

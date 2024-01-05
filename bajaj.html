@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        *{
+            margin:0px
+        }
+        .row{
+            display: inline-flex;
+            width: 100%;
+            height: 40px;
+            padding-top: 20px;
+            background-color:white;  
+            top: 0px;
+            position: relative; 
+
+        }
+        .column1 img{
+            width: 250px;
+            margin-left: 100px;
+        }
+        .column2 img{
+            background-position: relative;
+            margin-left: 800px;
+        }
+        .column2 #a{
+            color: darkblue;
+            position: absolute;
+            float: left;
+            padding-left: 580px;
+        }     
+        .column2 #b{
+            color: darkblue;
+            position: absolute;
+            padding-left: 610px;
+        }
+         .x hr{
+            position: absolute;
+            width:1px;
+            height: 18px;
+            float: right; 
+            margin-left: 640px;
+        }
+        .column2 #c{
+            color: darkblue;
+            position: absolute;
+            padding-left: 660px;
+        }
+        .column2 #d{
+            color: darkblue;
+            position: absolute;
+            padding-left: 690px;
+        }
+        .column2 #e{
+            color: darkblue;
+            position: absolute;
+            padding-left: 720px;
+        }
+
+        
+
+
+        .row1{
+            width: 85%;
+            align-items: justify;
+            margin-left: 105px;
+        }
+
+        
+
+
+
+
+
+
+        .container1{
+            /* list-style-type: none; */
+           text-align: left;
+           color:darkblue ;
+           margin-left: 0px;
+           padding-left: 85px;
+           position: sticky;
+           top: -2px;
+           background-color:white;
+        }
+        
+        .container1 .parent1 ul{
+            display: inline-flex;
+            padding: 5px;
+             width: 90px;
+            height: 100px;
+            
+           
+        }
+        .container1 .parent1 ul li{
+            list-style-type: none;
+            font-size: 18px;
+            padding: 15px;
+            cursor: pointer;
+            padding-right: -100px;
+            font-size: 25px;
+        }
+        .child{
+            display:none;
+            position: fixed;
+        }
+        .container1 .parent1 ul li:hover .child{
+            display: block;
+        }
+           .container1 .parent1 ul li:hover .child ul{
+            display: block;
+            background-color: skyblue;
+            color:blueviolet ;
+            /* font-size: 0px; */
+            /* border-radius: 0px; */
+            position: fixed; 
+            width: 100%;
+            height: 500px;
+            /* top: 0px; */
+            position: sticky;
+            
+        } 
+        #img{
+            width: 120px;
+            height: 100px;
+        }
+        .container1 .parent1 ul li:hover .child ul li:hover img{
+            color: aqua;
+            display: flex;
+            width: 90px;
+            height: 50px;
+            position: sticky;
+        }
+
+        /* .img5{
+            background-image: url("	https://www.tataconsumer.com/sites/g/files/gfwrlq316/files/Homepage_Brand-portfolio-Cheesy-pasta.jpg");
+            background-size: cover;transform: scale(1.2,1.2);
+
+        } */
+        .img3:hover{
+             background-image: url("	https://www.tataconsumer.com/sites/g/files/gfwrlq316/files/Homepage_Brand-portfolio-Cheesy-pasta.jpg");
+            transform: scale(1,1.2);
+            transition: 2s;
+            transition-delay: 2s;
+        }
+        
+        .img4{
+            margin-bottom: 20px;
+        }
+        .img4:hover{
+            /* margin-bottom: 30px; */
+            transform: scale(1,1.1);
+            transition: 2s;
+            transition-delay: 1s;
+        }
+        
+        #container2{
+            width: 100%;
+            height: 500px;
+            background-color: white;
+        }
+        .cont1{
+            width: 30%;
+            height: 500px;
+            background-color: silver;
+            float: left;
+            margin-left: 40px;
+            background-image: url("https://www.tataconsumer.com/sites/g/files/gfwrlq316/files/trustea1.png");
+            background-repeat: no-repeat;
+            background-size:500px ;
+        }
+        #p{
+            margin-top: 385px;
+            margin-left: 40%;
+            font-size: large;
+            font-size: 20px;
+            color: blue;
+        }
+        .cont1:hover{
+            background-color: white;
+            transition: 2s;
+        }
+        .cont2{
+            width: 30%;
+            height: 500px;
+            margin-left: 25px;
+            background-color: silver;
+            float: left;
+            background-image: url("https://www.tataconsumer.com/sites/g/files/gfwrlq316/files/Malawi2020_2.png");
+            background-size: 500px;
+            background-repeat: no-repeat;
+        }
+        #q{
+            margin-top: 385px;
+            margin-left: 40%;
+            font-size: large;
+            font-size: 20px;
+            color: blue;
+        }
+        .cont2:hover{
+            background-color: white;
+            transition: 2s;
+        }
+        .cont3{
+            width: 30%;
+            height: 500px;
+            background-color:silver;
+            margin-left: 25px;
+            float: left;
+            background-image: url("https://www.tataconsumer.com/sites/g/files/gfwrlq316/files/rawfilm-4y2TkE8NYXY-unsplash.png");
+            background-repeat: no-repeat;
+            background-size: 500px;
+            font: 600;
+            position: relative;
+        }
+        #r{
+            margin-top: 385px;
+            margin-left: 40%;
+            font-size: large;
+            font-size: 20px;
+            color: blue;
+        }
+        .cont3:hover{
+            background-color: white;
+            transition: 2s;
+        }
+        .cont5{
+            width: 100%;
+            height: 150px;
+            background-color: aquamarine;
+            margin-top: 60px;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    
+   <div>
+     <div class="row">
+    <div class="column1"> 
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOdcG9_7BWQXL6PYoDyvOO4HZvREv06n9z7A&usqp=CAU" alt="">	
+    </div>
+
+    <div class="column2">
+        <i id="a" class="fa-solid fa-globe"></i>
+        <i id="b" class="fa-solid fa-angle-down"></i>
+    <div class="x">
+        <hr>
+    </div>
+        <i id="c" class="fa-brands fa-instagram"></i>
+        <i id="d" class="fa-brands fa-twitter"></i>   
+        <i id="e" class="fa-brands fa-linkedin-in"></i>   
+
+        <img src="https://www.tataconsumer.com/themes/custom/tcpl/images/tata-group.png?itok=HNSU9vQK" alt="">
+    </div>
+    </div> 
+
+    <div class="row1" >
+        <hr>
+    </div>
+
+
+    <div class="container1">
+    <div class="parent1">
+        
+        <ul>
+            <li>About
+                <div  class="child">
+                <ul>
+                    <li>Overview</li>
+                    <li>Vision,Mission and Values</li>
+                    <li>Our Story</li>
+                    <li>Our Stratergy</li>
+                    <li>Leadership</li>
+                    <li>Operations</li>
+                    <li>Subsidaries.JVs and <br>
+                        Associates
+                    </li>
+                </ul>
+            </div>
+            </li>
+            <li>Brands
+                <div class="child">
+                    <ul>
+                        <li>Overview</li>
+                        <li>Tea</li>
+                        <li>Coffee</li>
+                        <li>Liquid Bevarages</li>
+                        <li>Foods</li>
+                        <li>Out-of-Home</li>
+                        <li>innovation</li>
+                    </ul>
+                </div>
+            </li>
+            <li>People
+                <div class="child">
+                    <ul>
+                        <li>Overview</li>
+                        <li>People Philosophy</li>
+                        <li>Careers for Professionals</li>
+                        <li>Careers for Students</li>
+                    </ul>
+                </div>
+            </li>
+            <li>Sustainability
+                <div class="child">
+                    <ul>
+                        <li>Overview</li>
+                        <li>For Better Sourcing</li>
+                        <li>For a Better Planet</li>
+                        <li>For Better Communities</li>
+                        <li>For Better Nutrition</li>
+                        <li>Sustainable Development Goals</li>
+                        <li>Our Certifications</li>
+                    </ul>
+                </div>
+            </li>
+            <li>Investors
+                <div class="child">
+                    <ul>
+                        <li>Overview</li>
+                        <li>Company Information</li>
+                        <li>Financial Information</li>
+                        <li>Corporate Governance</li>
+                        <li>Shareholder Information</li>
+                        <li>Investor Calender</li>
+                        <li><img src="	https://www.tataconsumer.com/sites/g/files/gfwrlq316/files/tata-salt-brand-explore-min.png" alt="" id="img"></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        </div>
+    </div>
+    </div>
+
+
+    <div class="cont">
+
+    </div>
+
+    <div class="img3">
+    <img src="	https://www.tataconsumer.com/sites/g/files/gfwrlq316/files/Homepage_Brand-portfolio-Cheesy-pasta.jpg" width="100%" height="400px" alt="">
+    </div>
+    <br>
+    <div class="img4">
+    <img src="https://www.tataconsumer.com/sites/g/files/gfwrlq316/files/Homepagepeople-image.jpg" width="40%" height="400px" alt="">
+    </div>
+    <div class="img5">
+
+    </div>
+    <div id="container2">
+       
+        <div class="cont1">
+            <img src="" alt="">
+            <div id="p">Trustea</div>                              
+        </div>
+        <div class="cont2">
+            <img src="" alt="">
+            <div id="q">UNICEF-ETP</div>
+        </div>
+        <div class="cont3">
+            <img src="" alt="">
+            <div id="r">CDP-Disclosure</div>
+        </div>
+    </div>
+
+    <div class="cont5">
+        <img src="https://www.tataconsumer.com/themes/custom/tcpl/images/Tata-Consumer-Logo-vertical.png" alt="">
+    </div>
+
+</div>
+   
+    
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0px;
+            }
+    
+            /* .a {
+                width: 100%;
+                height: 100px;
+                background-color: brown;
+            } */
+    
+            /* .b {
+                width: 100%;
+                height: 40px;
+                background-color: aqua;
+            } */
+            .x{
+            width: 100%;
+            height: 100px;
+            background-color: maroon;
+            
+         }
+         .container{
+            width: 100%;
+            height: 100px;
+            background-color: bisque;
+
+         }
+         .container .parent{
+            text-align: center;
+         }
+         .container .parent ul{
+            display: inline-flex;
+            padding: 15px;
+         }
+         .container .parent ul li{
+            list-style-type: none;
+            padding: 10px;
+            font-size: 18px;
+            cursor: pointer;
+         }
+         .container .parent ul li:hover{
+            color: darkorange;
+         }
+        .child{
+        display: none;
+        position: fixed ;   
+         }
+         .container .parent ul li :hover.child
+         {
+            display: block;
+         }
+         .container .parent ul li:hover.child ul{
+            display: block;
+            background-color: red;
+            color:black ;
+            font-size: 20px;
+            border-radius: 25px;
+
+         }
+         .container .parent ul li:hover .child ul li:hover{
+            color: white;
+            background-color: maroon;
+         }
+    
+    .c{
+                overflow: hidden;
+                height: 500px;
+    
+        }
+    
+            .container {
+                width: 500%;
+                height: 500px;
+                background-color: wheat;
+                position: relative;
+                animation: slider 5s 1s ease-in-out infinite;
+            }
+    
+            .img {
+                width: 20%;
+                height: 500px;
+                float: left;
+            }
+    
+            img {
+                height: 100px;
+                width: auto;
+            }
+    
+            @keyframes slider {
+                0% {
+                    right: 0;
+                }
+    
+                20% {
+                    right: 0%;
+                }
+    
+                25% {
+                    right: 100%;
+                }
+    
+                45% {
+                    right: 100%;
+                }
+    
+                50% {
+                    right: 200%;
+                }
+    
+                70% {
+                    right: 200%;
+                }
+    
+                75% {
+                    right: 300%;
+                }
+    
+                95% {
+                    right: 300%;
+                }
+    
+                100% {
+                    right: 0%;
+                }
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="a"> <img src="food_food.png" alt=""> </div>
+        <div class="x"> <img src="food logo.png" height="70px" width="20%" alt=""></div>
+        <div class="c">
+            <div class="container">
+                <img src="https://wallpapercave.com/dwp1x/wp2301561.jpg" class="img" alt="">
+                <img src="https://wallpapercave.com/dwp1x/wp1809658.jpg" class="img" alt="">
+                <img src="https://wallpapercave.com/dwp1x/wp2301614.jpg" class="img" alt="">
+                <img src="https://wallpapercave.com/dwp1x/wp2301621.jpg" class="img" alt="">
+            </div>
+        </div>
+           </body>
+    
+    </html>
+   

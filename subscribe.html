@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+        }
+        #sub{
+            padding: 50px 80px;
+            border-radius:20px ;
+            font-size: 25px;
+           
+        }
+        /* #unsub{
+            padding: 20px 40px;
+           visibility: visible; 
+        } */
+        
+        /* table{
+            height: 100px;
+            width: 150px;
+            text-align: center;
+            visibility: hidden;
+            border-radius: 10px;
+
+        }
+         */
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <button id="sub" >Subscribe <i class="fa-solid fa-bell"></i></button>
+        
+        <!-- <h1><button id="unsub">UNSubscribe <i class="fa-solid fa-bell-slash"></i></button></h1> -->
+        <!-- <table border="2px" cellspacing="0">
+            <tr>
+                <td>UNSUBSCRIBE</td>
+            </tr>
+            <tr>
+                <td>PERSONALIZE</td>
+            </tr>
+            <tr>
+                <td>ALL</td>
+            </tr>
+        </table> -->
+    </div>
+
+    <script>
+        let btn = document.querySelector("#sub")
+        let body=document.body
+        
+
+        // let tab = document.querySelector("table")
+        btn.addEventListener('click', ()=>
+        {
+            if(btn.innerHTML==`Subscribe <i class="fa-solid fa-bell"></i>`)
+            {
+                btn.innerHTML=`unsubscribe <i class="fa-solid fa-bell-slash"></i>`
+                btn.style.backgroundColor=`green`
+                body.style.backgroundColor=`yellow`
+            }
+            else{
+                btn.innerHTML=`Subscribe <i class="fa-solid fa-bell"></i>`
+                btn.style.backgroundColor=`red`
+                body.style.backgroundColor=`blue`
+            }
+        }
+        )
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        button{
+            padding: 20px 30px;
+        }
+        table{
+            height: 100px;
+            width: 150px;
+            text-align: center;
+            visibility: hidden;
+            border-radius: 10px;
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <h1><button>Subscribe <i class="fa-solid fa-bell"></i></button></h1>
+        <table border="2px" cellspacing="0">
+            <tr>
+                <td>UNSUBSCRIBE</td>
+            </tr>
+            <tr>
+                <td>PERSONALIZE</td>
+            </tr>
+            <tr>
+                <td>ALL</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        let btn = document.querySelector("button")
+        let tab = document.querySelector("table")
+        btn.addEventListener('mouseover', ()=>
+         {
+            if(tab.style.visibility == "hidden")
+                {
+                tab.style.visibility = 'visible'
+                }
+            // else{
+            //         tab.style.visibility = 'hidden'
+            //     }
+        })
+        btn.addEventListener('mouseout', ()=>
+         {
+            // if(tab.style.visibility == "visible")
+            //     {
+                tab.style.visibility = 'hidden'
+                // }
+            // else{
+            //         tab.style.visibility = 'hidden'
+            //     }
+        })
+        // let btn = document.querySelector("button");
+        // let tab = document.querySelector("table");
+        // let visible = false;
+        // btn.addEventListener('click', ()=> {
+        //     if(!visible){
+        //         tab.style.visibility = "visible";
+        //         visible = true;
+        //         }else{
+        //             tab.style.visibility = "hidden";
+        //             visible = false;
+        //             }
+        //             })
+        
+    </script>
+</body>
+</html>

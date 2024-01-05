@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOODFOOD</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+           
+        }
+        body{
+            background-color: black;
+        }
+        #div1{
+            height: 50px;
+            width: 100%;
+            background-color: white;
+            position:sticky;
+            top: 0;
+            border-bottom: 1px solid grey;
+        }
+        #div2{
+            height: 70px;
+            width: 100%;
+            background-color: rgb(169, 0, 0);
+            
+        }
+        #food{
+            height: 50px;
+            width: 70px;
+        }
+        nav{
+            padding: 15px 70px;
+
+            word-spacing: 45px;
+            text-align: center;
+            display: flex;
+            display: inline-block;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+        }
+        select{
+            border:none ;
+            
+           
+        }
+        #div3{
+            height: 410px;
+            width: 100%;
+            background-color: cadetblue;
+           
+        }
+        #btn2{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 30px;
+            position: relative;
+            left: 96%;
+            bottom: 310px;
+            background-color: aqua;
+        }
+        #btn1{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 30px;
+            position: relative;
+            left:0px;
+            top: 150px;
+            background-color: aqua;
+            z-index: 1;
+        }
+        #img1{
+            height: 410px;
+            width: 100%;
+            position: relative;
+            bottom: 60px;
+        }
+        input{
+            padding: 15px 120px;
+            border-radius: 30px;
+            background-color: rgba(203, 223, 223, 0.59);
+            position: relative;
+            left:400px;
+            bottom: 300px;
+        }
+        #div4{
+            height: 150px;
+            width: 100%;
+            background-color: white;
+            
+        }
+        .sub{
+            width: 25%;
+            height: 150px;
+            color: whitesmoke;
+            font-size: 30px;
+            font-style: italic;
+            float:left ;
+            display:flex;
+            justify-content:left;
+            
+            
+
+        }
+        .img2{
+            height: 70px;
+            width: 70px;
+            position: relative;
+            left:150px;
+            top: 30px;
+        }
+        .img2:hover{
+            height: 70px;
+            width: 70px;
+            position: relative;
+            left:150px;
+            top: 20px;
+            transition: 200ms;
+        }
+        .span{
+            position:relative;
+            bottom:-100px;
+            left: 70px;
+            display: inline;
+        }
+        #recipes{
+            width: 100%;
+            height: 700px;
+            background-color: white;
+        }
+        h3{
+            display: inline;
+            font-size: 36px;
+            position: relative;
+            left: 159px;
+            top: 70px;
+            font-family: 'Poppins', sans-serif;
+
+        }
+        #socialmedia{
+            position: fixed;
+            left: 97%;
+            top: 240px;
+            height: 250px;
+            width: 100px;
+            background-color:transparent;
+        }
+        .social{
+            width: 50px;
+            height: 40px;
+            padding-top: 5px;
+            font-size: 32px;
+            color: whitesmoke;
+            padding: 5px 5px 5px;
+            
+        }
+        /* #yt:hover,#fb:hover,#pin:hover,#ig:hover,#twi:hover{
+            width: 100px;
+        } */
+        .social:hover{
+            
+            position: relative;
+            left: -40px;
+            width: 100px;
+            height: 40px;
+        }
+        #ig{
+            background-image: linear-gradient(#f0760c,#e04f4a,#bf2797);
+        }
+        table{
+            background-color:rgba(237, 230, 230, 0);
+            border: 1px solid rgb(255, 255, 255);
+            
+            font-size: 20px;
+            
+            position: relative;
+            
+            bottom: 550px;
+            left: 11%;
+        }
+        td{
+            border: 0;
+            font-family: 14px poppins,sans-serif;
+            transition: 100ms;
+            border-right: 2px solid rgb(255, 255, 255);
+        }
+        .but{
+            border: transparent;
+            padding: 13px 30px;
+            font: 18px poppins,sans-serif;
+        }
+        .but:focus{
+            background-color: #a20c0b;
+            color: white
+        }
+        .but:hover{
+            background-color: #a20c0b;
+            color: white;
+        }
+        #minicorousel{
+            width: 800px;
+            height: 390px;
+            background-color: rgb(127, 255, 212);
+            position: relative;
+            bottom: 510px;
+            left: 11.3%;
+            
+        }
+        #btn3,#btn4{
+            padding: 10px 15px;
+            font-size: 30px;
+        }
+        #btn3{
+            position:absolute;
+            z-index: 1;
+            top: 1090px;
+            right: 1249px;
+            
+
+        }
+        #btn4{
+            position:absolute;
+            position:absolute;
+            z-index: 1;
+            top: 1090px;
+            left: 915px;
+        }
+        #btn3:hover,#btn4:hover{
+            background-color: #f0760c;
+            color: white;
+        }
+        .rec{
+            height: 390px;
+            width: 48%;
+            float: left;
+        
+            
+        }
+        #rec1{
+            background-color: rgb(181, 183, 181);
+              
+        }
+        #rec2{
+            background-color:rgb(157, 157, 157);
+            position: relative;
+            background-size:100% 280px ;
+            
+            left: 10px;
+        }
+        #rec11,#rec22{
+            height:280px;
+            width:100%;
+            
+        }
+        #rec11:hover,#rec22:hover {
+            transition: 1s;
+            transform: scale(1.08);
+        }
+        .h3rec{
+            display: inline-block;
+            position: relative;
+            left: 10px;
+            top: 10px;
+            font-size: larger;
+        }
+        
+
+     </style>
+</head>
+<body>
+    <div id="div2">
+        <img id="food" src="https://www.foodfood.com/assets/images/logo/logo.png" style="padding-left: 29px;height: 60px;width: 100px;">
+    </div>
+    <div id="div1">
+        <nav>
+            <a href="#">HOME
+            <SELEct>
+                <option value=""> CHEFS      </option>
+                <option value=""> CHEf</option>
+                <option value=""> CHEFS</option>
+                <option value=""> CHEFS</option>
+                <option value=""> CHEFS</option>
+            </SELEct>
+        </a>
+            <a href="#">
+            <SELEct>
+                <option value=""> SHOWS</option>
+                <option value=""> CHEFS</option>
+                <option value=""> CHEFS</option>
+                <option value=""> CHEFS</option>
+                <option value=""> CHEFS</option>
+            </SELEct>
+        </a>
+            <a href="#">
+            <SELEct>
+                <option value=""> RECIPES</option>
+                <option value=""> CHEFS</option>
+                <option value=""> CHEFS</option>
+                <option value=""> CHEFS</option>
+                <option value=""> CHEFS</option>
+            </SELEct>
+        </a>
+            <a href="#">
+            <SELEct>
+                <option value=""> VIDEOS</option>
+                <option value=""> CHEFS</option>
+                <option value=""> CHEFS</option>
+                <option value=""> CHEFS</option>
+                <option value=""> CHEFS</option>
+            </SELEct>
+        </a>
+            <a href="#">
+            <SELEct>
+                <option value=""> FOOD JOURNAL</option>
+                <option value=""> CHEFS</option>
+                <option value=""> CHEFS</option>
+                <option value=""> CHEFS</option>
+                <option value=""> CHEFS</option>
+            </SELEct>
+        </a>
+            
+          <a href="#"> <span>BLOG</span></a>
+           <a href="#"> <span>ABOUT-US</span></a>
+           <a href="#"> <span> CONTACT-US</span></a>
+           <a href="#"> <span> SIGN-IN</span></a>
+        </nav>
+    
+
+    </div>
+    <div id="div3">
+        <button id="btn1"><</button>
+        
+        <img id="img1" src="https://www.foodfood.com/images/banner/Cook-Smart_D.png"  alt="">
+        <button id="btn2">></button>
+        <input type="text" name="" id="" placeholder="Search">
+
+    </div>
+    <div id="div4">
+        <div class="sub" style="background-color: lightseagreen;"><img class="img2" src="https://www.foodfood.com/assets/images/cuisine.png" alt=""><span  class="span"> Cusisine</span></div>
+        <div class="sub" style="background-color: rgb(137, 255, 11);"> <img class="img2" src="https://www.foodfood.com/assets/images/ingredience.png
+            " alt=""><span class="span">Ingredients</span></div>
+        <div class="sub" style="background-color: rgb(219, 155, 16);"> <img class="img2" src="	https://www.foodfood.com/assets/images/meal-&-course.png" alt=""><span class="span">Meal</span></div>
+        <div class="sub" style="background-color: rgb(224, 0, 0);"> <img class="img2" src="https://www.foodfood.com/assets/images/chef.png" alt=""><span class="span">Occasion</span></div>
+    </div>
+    <div id="recipes">
+        <h3><span style="color: maroon;">Re</span>cipes</h3>
+
+    </div>
+
+    
+
+    <div id="socialmedia">
+        <div class="social" id="fb" style="background-color: blue;"><i class="fab fa-facebook socialfa"></i></div>
+        <div class="social" id="yt" style="background-color: red;"><i class="fab fa-youtube socialfa"></i></div>
+        <div class="social" id="ig" ><i class="fab fa-instagram socialfa"></i></div>
+        <div class="social" id="twi" style="background-color: skyblue;"><i class="fab fa-twitter socialfa"></i></div>
+        <div class="social" id="pin" style="background-color:rgb(224, 0, 0);"><i class="fab fa-pinterest socialfa"></i></div>
+    </div>
+
+    <table  border="2px" >
+            <tr>
+                <td><button class="but">Snack Recipes</button></td>
+                <td><button class="but">By Sanjeev Kapoor</button></td>
+                <td><button class="but">Mummy Ka Magic</button></td>
+                <td><button class="but">Healthy Recipes</button></td>
+            </tr>
+    </table>
+    <button id="btn3"><i class="fa fa-angle-left"></i></button>
+    <button id="btn4"><i class="fa fa-angle-right"></i></button>
+    <div id="minicorousel">
+        <div class="rec" id="rec1"><img src="https://fdstatic.foodfood.com/odd/images/8.3.jpg" id="rec11">           <div> 
+            <ul>
+                <li>
+                    <h3 class="h3rec">Chicken Hash Cakes</h3>
+                </li>
+            </ul>
+        </div></div>
+        <div class="rec" id="rec2"><img src="https://fdstatic.foodfood.com/odd/images/PRTET107002-01.jpg" id="rec22"><div> 
+            <ul>
+                <li>
+                    <h3 class="h3rec">Oats And Chocolate Chip Cookies</h3>
+                </li>
+            </ul>
+        </div>
+    </div>
+        <div class="rec" id="rec3"></div>
+    </div>
+    
+
+
+
+    <script>
+        let arr=["https://www.foodfood.com/images/banner/Cook-Smart_D.png","https://fdstatic.foodfood.com/odd/images/sKZmoVFoodFood-Chefs-mob.jpg","https://fdstatic.foodfood.com/odd/images/rqM1JYChefs-Rasoi.jpg"]
+        let i=0
+        function demo()
+        {
+            img1.src=arr[i]
+            i++
+            if(i==arr.length)
+            {
+                i=0
+            }
+        }
+        btn1.onclick=demo
+        let y=arr.length
+        function demo()
+        {
+            y--
+            img1.src=arr[y]
+            
+            if(y==0)
+            {
+                y=arr.length
+            }
+        }
+        btn2.onclick=demo
+
+
+
+        let arr1=["https://www.foodfood.com/images/banner/Cook-Smart_D.png","https://fdstatic.foodfood.com/odd/images/sKZmoVFoodFood-Chefs-mob.jpg","https://fdstatic.foodfood.com/odd/images/rqM1JYChefs-Rasoi.jpg"]
+        let i=0
+        function demo()
+        {
+            img1.src=arr[i]
+            i++
+            if(i==arr.length)
+            {
+                i=0
+            }
+        }
+        btn1.onclick=demo
+        let y=arr.length
+        function demo()
+        {
+            y--
+            img1.src=arr[y]
+            
+            if(y==0)
+            {
+                y=arr.length
+            }
+        }
+        btn2.onclick=demo
+    </script>
+    
+</body>
+</html>

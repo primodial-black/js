@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        body{
+            background-image: url(https://wallpapercave.com/wp/wp13044320.jpg);
+            background-size: cover;
+
+        }
+        .main{
+            height: 700px;
+            width: 400px;
+            background-image:linear-gradient(rgba(155, 28, 252, 0.664) ,rgba(255, 20, 145, 0.626),rgba(155, 28, 252, 0.582));
+            border: 3px white solid;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            top: 150px;
+            left: 40%;
+
+            border-radius: 20px;
+            box-shadow: 3px inset white;
+        }
+        h3{
+            color: white;
+            position: absolute;
+            font-style: italic;
+            font-size: 30px;
+            display: inline-block;
+        }
+        h3:hover{
+            color: aqua;
+            transform: scale(1.2);
+            -webkit-text-stroke: red 1px;
+        }
+        nav{
+            float: right;
+            padding: 20px;
+        }
+        a{
+            padding: 15px;
+            color: antiquewhite;
+            text-decoration: none;
+            font-size: 25px;
+            font-style: italic;
+        }
+        a:hover{
+            color: orange;
+            transform: scale(1.2);
+            text-decoration: underline;
+        }
+        h1{
+            color: antiquewhite;
+            -webkit-text-stroke: red 1px;
+            font-style: italic;
+            position: relative;
+            bottom: 40px;
+        }
+        input{
+            
+            padding: 10px 20px;
+            border-left: 0px;
+            border-top: 0px;
+            border-right: 0px;
+            border-bottom-color: rgb(0, 0, 0);
+            background-color: transparent;
+            
+        }
+        table{
+            color: antiquewhite;
+           
+            font-style: italic;
+        }
+        #btn1{
+            position: relative;
+            top: 50px;
+            padding: 15px 30px;
+            border-radius: 15px;
+            font-style: italic;
+            font-size: 20px;
+            background-color: transparent;
+        }
+        #btn1:hover{
+            background-color: aliceblue;
+            font-style: italic;
+            font-size: 20px;
+        }
+        #eye1,#eye2{
+            position: absolute;
+        }
+
+    </style>
+</head>
+<body>
+    <h3>logo</h3>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">services</a>
+        <a href="#">Contact</a>
+    </nav>
+    <div class="main">
+        <h1>Login</h1>
+        <table>
+            <tr>
+                <td><label for="name">USERNAME</label></td>
+                </tr>
+                <tr>
+                <td><input type="text" id="name"><i class="fa-solid fa-user"></i> <br><p id="name1"></p></td>
+            </tr>
+           
+            <tr>
+                <td><label for="number">Phone Number</label></td>
+                </tr>
+                <tr>
+                <td><input type="number" id="num"><i class="fa-solid fa-phone"></i><br><p id="num1"></p></td>
+            </tr>
+            
+            <tr>
+                <td><label  for="email">Email</label></td>
+                </tr>
+                <tr>
+                <td><input type="text" id="mail"><i class="fa-solid fa-envelope"></i><br><p id="mail1"></p></td>
+            </tr>
+            
+            <tr>
+                <td><label  for="password">Password</label></td>
+                </tr>
+                <tr>
+                <td><input type="password" id="pwd"><i class="fa-solid fa-eye" id="eye1" onclick="pswdeye()"></i><i class="fa fa-eye-slash" id="eye2" onclick="pswdeye()"></i><br><p id="pwd1"></p></td>
+            </tr>
+            
+        </table>
+        <button type="submit" id="btn1" onclick="details()">submit</button>
+
+    </div>
+
+
+    <script>
+        function details()
+    {
+        let name1=document.getElementById("name").value;
+        if(name1.length>3 && name1.length<20)
+        {
+            localStorage.setItem("NAME",name1)
+            let name2=localStorage.getItem("NAME")
+            document.getElementById("name1").innerHTML=``
+            document.getElementById("name1").style.color=``
+        }
+        else{
+            document.getElementById("name1").innerHTML=`enter valid name`
+            document.getElementById("name1").style.color=`black`
+
+        }
+        if(name1=="")
+        {
+            document.getElementById("name1").innerHTML=`don't leave empty`
+            document.getElementById("name1").style.color=`black`
+        }
+        
+
+        let phone=document.getElementById("num").value
+        if(phone=="")
+        {
+            document.getElementById("num1").innerHTML=`don't leave empty`
+            document.getElementById("num1").style.color=`black`
+
+        }
+        if(phone.length==10)
+        {
+            localStorage.setItem("Number",phone)
+            let phone2=localStorage.getItem("Number")
+            document.getElementById("num1").innerHTML=``
+            document.getElementById("num1").style.color=``
+        }
+        // if(phone.length>10<phone.length)
+        // {
+        //     document.getElementById("num1").innerHTML=`enter valid number`
+        //     document.getElementById("num1").style.color=`black`
+        // }
+        let mail=document.getElementById("mail").value
+        if(mail=="")
+        {
+            document.getElementById("mail1").innerHTML=`don't leave empty`
+            document.getElementById("mail1").style.color=`black`
+        }
+        else{
+            localStorage.setItem("email",mail)
+            let name2=localStorage.getItem("email")
+            document.getElementById("mail1").innerHTML=``
+            document.getElementById("mail1").style.color=``
+
+        }
+
+        let pass1=document.getElementById("pwd").value;
+        if(pass1=="")
+        {
+            document.getElementById("pwd1").innerHTML=`don't leave empty`
+            document.getElementById("pwd1").style.color=`black`
+
+        
+            if(pass1.length>=8 && pass1.length<=16)
+            {
+            localStorage.setItem("PASSWORD",pass1)
+            let pass3=localStorage.getItem("PASSWORD")
+            document.getElementById("pwd1").innerHTML=``
+            document.getElementById("pwd1").style.color=``
+            }
+            // else
+            // {
+            //     document.getElementById("pwd1").innerHTML=`the password must be in 8-16 characters`
+            //     document.getElementById("pwd1").style.color=`black`
+            // }
+        }
+            function pswdeye()
+        {
+            let pass1=document.querySelector("#pwd").getAttribute("type")
+            
+            if(pass1=="password")
+            {
+                document.querySelector("#eye1").setAttribute("type","text")
+                document.querySelector("#eye1").setAttribute("class","fa fa-eye-slash")
+            }
+            else
+            {
+                document.querySelector("#eye2").setAttribute("type","password")
+                document.querySelector("#eye2").setAttribute("class","fa fa-eye")
+
+
+            }
+        }
+            
+    }
+
+    </script>
+
+    
+</body>
+</html>
